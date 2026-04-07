@@ -2,15 +2,78 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Juandmar.github.io",
+    "title": "Juan Martinez Vasquez",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "I am a senior pursuing a Bachelor's Degree in Computer Science with a deep passion for artificial intelligence, machine learning, and software development. I enjoy building projects, exploring new technologies, and finding ways to use technology to make a meaningful impact in society. I am currently expanding my knowledge in secure open source collaboration and continuously growing my technical skill set.\n  Read more about me →"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "My name is Juan, and I am a senior at CSUF expecting to graduate in May 2026 with a Bachelor’s Degree in Computer Science. I am deeply passionate about artificial intelligence, machine learning, and software development, as well as the ever-evolving landscape of technology. Throughout my academic journey, I have cultivated a strong foundation in computational thinking and problem-solving, while continuously seeking opportunities to expand my knowledge and contribute meaningfully to the field of technology. I aspire to leverage my skills and education to develop innovative solutions that make a lasting impact on society."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Juan Martinez Vasquez",
+    "section": "Education",
+    "text": "Education"
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "About",
+    "section": "",
+    "text": "My name is Juan, and I am a senior at CSUF expecting to graduate in May 2026 with a Bachelor’s Degree in Computer Science. I am deeply passionate about artificial intelligence, machine learning, and software development, as well as the ever-evolving landscape of technology. Throughout my academic journey, I have cultivated a strong foundation in computational thinking and problem-solving, while continuously seeking opportunities to expand my knowledge and contribute meaningfully to the field of technology. I aspire to leverage my skills and education to develop innovative solutions that make a lasting impact on society."
+  },
+  {
+    "objectID": "about.html#academic-professional",
+    "href": "about.html#academic-professional",
+    "title": "About",
+    "section": "Academic & Professional",
+    "text": "Academic & Professional\nThroughout my academic career, I have completed rigorous coursework including File Structure & Database, Operating System Concepts, and PHP and MySQL Programming, each of which has strengthened my technical foundation and practical skill set. Among my notable projects, I developed a database management system with a graphical user interface designed to efficiently retrieve and organize student and professor records. Additionally, as part of my Operating System Concepts course, I engineered a C-based web server capable of serving static files and performing mathematical operations directly through URL requests. Furthermore, I designed and built a PHP and MySQL powered website dedicated to whale anatomy education, featuring user registration, a guest list, and multiple informational pages."
+  },
+  {
+    "objectID": "about.html#education-projects",
+    "href": "about.html#education-projects",
+    "title": "About",
+    "section": "Education & Projects",
+    "text": "Education & Projects\nThroughout my academic career, I have completed rigorous coursework including File Structure & Database, Operating System Concepts, and PHP and MySQL Programming, each of which has strengthened my technical foundation and practical skill set. Among my notable projects, I developed a database management system with a graphical user interface designed to efficiently retrieve and organize student and professor records. Additionally, as part of my Operating System Concepts course, I engineered a C-based web server capable of serving static files and performing mathematical operations directly through URL requests. Furthermore, I designed and built a PHP and MySQL powered website dedicated to whale anatomy education, featuring user registration, a guest list, and multiple informational pages."
+  },
+  {
+    "objectID": "about.html#technical-skills",
+    "href": "about.html#technical-skills",
+    "title": "About",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\n\n  \n    Languages\n    \n      \n        Python\n        C / C++\n        Java\n        JavaScript\n        PHP\n        HTML / CSS\n        SQL\n        R\n      \n    \n  \n\n  \n    Tools & Technologies\n    \n      \n        MySQL\n        Git / GitHub\n        Linux\n        VS Code\n        React\n        Pandas\n        NumPy\n      \n    \n  \n\n  \n    Soft Skills\n    \n      \n        Problem Solving\n        Critical Thinking\n        Adaptability\n        Teamwork\n        Time Management\n        Communication *(actively developing)*"
+  },
+  {
+    "objectID": "about.html#my-passion",
+    "href": "about.html#my-passion",
+    "title": "About",
+    "section": "My Passion",
+    "text": "My Passion\nFrom an early age, computers and technology have always fascinated me — not just as tools, but as a means to create, solve, and innovate. What truly drives me is the belief that technology has the power to transform lives and make a meaningful difference in society. I am deeply passionate about artificial intelligence, machine learning, and software development, and I find great excitement in exploring how these fields can be applied to solve real-world problems. I am currently developing a deeper understanding of open source collaboration, approaching it with care and responsibility as I learn the best and most secure practices to contribute confidently in the future. Whether I am building my own projects, conducting research, or exploring new innovations, my ultimate goal is to use technology as a force for good — creating solutions that are not only functional and efficient, but that genuinely help people and leave a lasting positive impact on the world."
+  },
+  {
+    "objectID": "about.html#contact-links",
+    "href": "about.html#contact-links",
+    "title": "About",
+    "section": "Contact & Links",
+    "text": "Contact & Links\nFeel free to connect with me or explore my work through the links below.\n\n[LinkedIn](your-linkedin-url)\n[GitHub]()"
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Juan Martinez Vasquez",
+    "section": "",
+    "text": "I am a senior pursuing a Bachelor's Degree in Computer Science with a deep passion for artificial intelligence, machine learning, and software development. I enjoy building projects, exploring new technologies, and finding ways to use technology to make a meaningful impact in society. I am currently expanding my knowledge in secure open source collaboration and continuously growing my technical skill set.\n  Read more about me →"
+  },
+  {
+    "objectID": "index.html#technical-skills",
+    "href": "index.html#technical-skills",
+    "title": "Juan Martinez Vasquez",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\n  \n    Languages\n    \n      Python\n      Java\n      JavaScript\n      C / C++\n    \n  \n  \n    Tools\n    \n      Git / GitHub\n      MySQL\n      React\n      Linux"
   }
 ]

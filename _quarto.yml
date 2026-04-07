@@ -3,15 +3,27 @@ project:
   output-dir: docs
 
 website:
-  title: "Juandmar.github.io"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: projects.qmd
+        text: Projects
+      - href: about.qmd
+        text: About Me
+        #icon: megaphone
+    tools:
+      - icon: github
+        href: https://github.com/Juandmar-bit
+        
 
 format:
   html:
+    backgroundcolor: "#002242"
+    fontcolor: "white"
+    linkcolor: "black"
+    mainfont: "monospace"
+    fontsize: 20px
     theme:
       - cosmo
       - brand

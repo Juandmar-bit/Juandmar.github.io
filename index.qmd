@@ -1,11 +1,57 @@
 ---
-title: "Juandmar.github.io"
+title: "Juan Martinez Vasquez"
+subtitle: "Computer Science Student & Aspiring Software Developer"
+image: profile.jpg
+format:
+  html:
+    css: styles.css
+    page-layout: full
+    toc: false
+about: 
+  template: solana
+  image-shape: round
+  links: 
+    - icon: github
+      text: Github
+      href: https://github.com/Juandmar-bit
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/juan-martinez-vasquez-a57919160/
+    - icon: briefcase-fill
+      text: View My Work
+      href: projects.qmd
 ---
 
-This is a Quarto website.
+## 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+```{=html}
+<div class="summary">
+  <p>I am a senior pursuing a Bachelor's Degree in Computer Science with a deep passion for artificial intelligence, machine learning, and software development. I enjoy building projects, exploring new technologies, and finding ways to use technology to make a meaningful impact in society. I am currently expanding my knowledge in secure open source collaboration and continuously growing my technical skill set.</p>
+  <a href="about.html" class="summary-link">Read more about me →</a>
+</div>
+```
 
-```{r}
-1 + 1
+## Technical Skills
+
+```{=html}
+<div class="skills-highlight">
+  <div class="skills-group">
+    <p class="skills-group-title">Languages</p>
+    <div class="pills">
+      <span class="pill-home lang">Python</span>
+      <span class="pill-home lang">Java</span>
+      <span class="pill-home lang">JavaScript</span>
+      <span class="pill-home lang">C / C++</span>
+    </div>
+  </div>
+  <div class="skills-group">
+    <p class="skills-group-title">Tools</p>
+    <div class="pills">
+      <span class="pill-home tools">Git / GitHub</span>
+      <span class="pill-home tools">MySQL</span>
+      <span class="pill-home tools">React</span>
+      <span class="pill-home tools">Linux</span>
+    </div>
+  </div>
+</div>
 ```

@@ -1,9 +1,78 @@
 ---
 title: "About"
+format:
+  html:
+    css: styles.css
 ---
 
-About this site
+## About Me
 
-```{r}
-1 + 1
+My name is Juan, and I am a senior at CSUF expecting to graduate in May 2026 with a Bachelor's Degree in Computer Science. I am deeply passionate about artificial intelligence, machine learning, and software development, as well as the ever-evolving landscape of technology. Throughout my academic journey, I have cultivated a strong foundation in computational thinking and problem-solving, while continuously seeking opportunities to expand my knowledge and contribute meaningfully to the field of technology. I aspire to leverage my skills and education to develop innovative solutions that make a lasting impact on society.
+
+## Education & Projects
+
+Throughout my academic career, I have completed rigorous coursework including File Structure & Database, Operating System Concepts, and PHP and MySQL Programming, each of which has strengthened my technical foundation and practical skill set. Among my notable projects, I developed a database management system with a graphical user interface designed to efficiently retrieve and organize student and professor records. Additionally, as part of my Operating System Concepts course, I engineered a C-based web server capable of serving static files and performing mathematical operations directly through URL requests. Furthermore, I designed and built a PHP and MySQL powered website dedicated to whale anatomy education, featuring user registration, a guest list, and multiple informational pages.
+
+## Technical Skills
+
+```{=html}
+<div class="grid-skills">
+
+  <div class="skill-card">
+    <div class="skill-card-header header-lang">Languages</div>
+    <div class="skill-card-body">
+      <ul>
+        <li>Python</li>
+        <li>C / C++</li>
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+        <li>HTML / CSS</li>
+        <li>SQL</li>
+        <li>R</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-card-header header-tools">Tools & Technologies</div>
+    <div class="skill-card-body">
+      <ul>
+        <li>MySQL</li>
+        <li>Git / GitHub</li>
+        <li>Linux</li>
+        <li>VS Code</li>
+        <li>React</li>
+        <li>Pandas</li>
+        <li>NumPy</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="skill-card-header header-soft">Soft Skills</div>
+    <div class="skill-card-body">
+      <ul>
+        <li>Problem Solving</li>
+        <li>Critical Thinking</li>
+        <li>Adaptability</li>
+        <li>Teamwork</li>
+        <li>Time Management</li>
+        <li>Communication *(actively developing)*</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
 ```
+
+## My Passion
+
+From an early age, computers and technology have always fascinated me — not just as tools, but as a means to create, solve, and innovate. What truly drives me is the belief that technology has the power to transform lives and make a meaningful difference in society. I am deeply passionate about artificial intelligence, machine learning, and software development, and I find great excitement in exploring how these fields can be applied to solve real-world problems. I am currently developing a deeper understanding of open source collaboration, approaching it with care and responsibility as I learn the best and most secure practices to contribute confidently in the future. Whether I am building my own projects, conducting research, or exploring new innovations, my ultimate goal is to use technology as a force for good — creating solutions that are not only functional and efficient, but that genuinely help people and leave a lasting positive impact on the world.
+
+## Contact & Links
+
+Feel free to connect with me or explore my work through the links below.
+
+-   \[LinkedIn\](your-linkedin-url)
+-   \[GitHub\]()
