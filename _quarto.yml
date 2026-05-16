@@ -21,12 +21,14 @@ format:
   html:
     backgroundcolor: "#002242"
     fontcolor: "white"
-    linkcolor: "black"
+    linkcolor: "#8ecae6"
     mainfont: "monospace"
     fontsize: 20px
     theme:
       - cosmo
       - brand
+      
+    highlight-style: atom-one-dark
     css: styles.css
     toc: true
 

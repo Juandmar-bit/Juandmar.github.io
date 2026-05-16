@@ -2,7 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
-
+crime_open_database_core_2021.csv
+.DS_Store
+*.knit.html
+*_cache/
 /.quarto/
 **/*.quarto_ipynb
 .positai

@@ -109,3 +109,25 @@
   content: "— ";
   color: #aaa;
 }
+
+pre.sourceCode {
+  background-color: #1b1f23 !important;
+  border-radius: 12px;
+  padding: 1em;
+}
+
+code.sourceCode {
+  color: #f8f8f2;
+}
+
+.cell-output,
+.cell-output pre,
+.cell-output-stdout,
+.cell-output-stdout pre {
+  color: white !important;
+  background-color: #002242 !important;
+}
+
+pre {
+  color: white !important;
+}
