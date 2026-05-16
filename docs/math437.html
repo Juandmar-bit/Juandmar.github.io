@@ -295,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">size_sum</span>(los_angeles)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "[214,445 × 12]"</code></pre>
+<pre><code>[1] "[214,445 × 14]"</code></pre>
 </div>
 </div>
 <p>Focusing on Los Angeles reduces the size of the dataset and makes the analysis more consistent. Crime patterns, reporting methods, and data completeness may differ across cities, so analyzing one city helps limit those differences.</p>
@@ -303,30 +303,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(los_angeles)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 214,445
-Columns: 12
+Columns: 14
+$ uid               &lt;dbl&gt; 13306438, 13306439, 13306440, 13306441, 13306442, 13…
 $ city_name         &lt;chr&gt; "Los Angeles", "Los Angeles", "Los Angeles", "Los An…
+$ offense_code      &lt;chr&gt; "23F", "26C", "520", "520", "290", "26C", "23H", "90…
 $ offense_type      &lt;chr&gt; "theft from motor vehicle (except theft of motor veh…
 $ offense_group     &lt;chr&gt; "larceny/theft offenses", "fraud offenses (except co…
 $ offense_against   &lt;chr&gt; "property", "property", "society", "society", "prope…
+$ date_single       &lt;dttm&gt; 2021-01-01 00:01:00, 2021-01-01 00:01:00, 2021-01-0…
 $ longitude         &lt;dbl&gt; -118.2418, -118.5033, -118.4146, -118.4146, -118.285…
 $ latitude          &lt;dbl&gt; 34.0955, 34.1598, 34.3038, 34.3038, 33.7509, 34.2857…
 $ location_type     &lt;chr&gt; "vehicle parking", "other commercial", "street", "st…
 $ location_category &lt;chr&gt; "open space", "commercial", "street", "street", "oth…
-$ year              &lt;chr&gt; "2021", "2021", "2021", "2021", "2021", "2021", "202…
-$ month             &lt;chr&gt; "01", "01", "01", "01", "01", "01", "01", "01", "01"…
-$ day_of_week       &lt;chr&gt; "Friday", "Friday", "Friday", "Friday", "Friday", "F…
-$ hour              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…</code></pre>
+$ census_block      &lt;chr&gt; "060371972003001", "060371396001009", "0603710611320…
+$ date_start        &lt;dttm&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ date_end          &lt;dttm&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colMeans</span>(<span class="fu">is.na</span>(los_angeles)) <span class="sc">*</span> <span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>        city_name      offense_type     offense_group   offense_against 
-                0                 0                 0                 0 
-        longitude          latitude     location_type location_category 
-                0                 0                 0                 0 
-             year             month       day_of_week              hour 
-                0                 0                 0                 0 </code></pre>
+<pre><code>              uid         city_name      offense_code      offense_type 
+       0.00000000        0.00000000        0.00000000        0.00000000 
+    offense_group   offense_against       date_single         longitude 
+       0.00000000        0.00000000        0.00000000        0.00000000 
+         latitude     location_type location_category      census_block 
+       0.00000000        0.09419665        0.09419665        0.00000000 
+       date_start          date_end 
+     100.00000000      100.00000000 </code></pre>
 </div>
 </div>
 <p>The variables data_start and data_end contain substantial missing data for Los Angeles. These variables represent a possible time range for when a crime could have occurred, but for Los Angeles, the dataset relies on date_single, which provides a representative estimate of the crime occurrence time.</p>
@@ -439,7 +443,7 @@ $ hour              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">200</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>los_angeles_sample <span class="ot">&lt;-</span> los_angeles <span class="sc">|&gt;</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">1000</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">100000</span>)</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>los_angeles_sample <span class="ot">&lt;-</span> los_angeles_sample <span class="sc">|&gt;</span></span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -516,7 +520,7 @@ $ hour              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 <pre><code># A tibble: 1 × 2
    mtry .config        
   &lt;int&gt; &lt;chr&gt;          
-1     1 pre0_mod1_post0</code></pre>
+1     2 pre0_mod2_post0</code></pre>
 </div>
 </div>
 </section>
@@ -534,7 +538,7 @@ $ hour              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>rf_engine <span class="sc">|&gt;</span> <span class="fu">pluck</span>(<span class="st">"prediction.error"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4276248</code></pre>
+<pre><code>[1] 0.4023938</code></pre>
 </div>
 </div>
 <p>The Out-of-Bag (OOB) prediction error provides an internal estimate of model generalization performance. An OOB error around 0.403 means that the model incorrectly classified about 40% of the out-of-bag observations, corresponding to an estimated OOB accuracy of about 60%.</p>
@@ -561,17 +565,12 @@ $ hour              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">conf_mat</span>(rf_preds,</span>
 <span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">truth =</span> time_of_day,</span>
 <span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">estimate =</span> .pred_class)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conf_mat</span>(rf_preds,</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">truth =</span> time_of_day,</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">estimate =</span> .pred_class)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Truth
 Prediction  Afternoon Morning Night
-  Afternoon        32      19    30
-  Morning           4       5     3
-  Night            38      23    47</code></pre>
+  Afternoon      3768    1880  2331
+  Morning         176     227   130
+  Night          3660    2363  5466</code></pre>
 </div>
 </div>
 <p>The confusion matrix shows that the random forest model was generally better at identifying crimes that occurred during the Night period compared to Morning and Afternoon. Many nighttime observations were correctly classified, suggesting that the predictors contained stronger patterns associated with crimes occurring at night. In contrast, the model had greater difficulty distinguishing between morning and afternoon crimes, indicating that these categories may share more similar characteristics.</p>

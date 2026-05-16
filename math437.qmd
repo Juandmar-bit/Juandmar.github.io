@@ -32,7 +32,7 @@ options(scipen = 999)
 
 crime_core <- readr::read_csv(here::here("crime_open_database_core_2021.csv"))
 
-los_angeles <- crime_core |>
+la <- crime_core |>
   filter(city_name == "Los Angeles") |>
   mutate(
     location_type = ifelse(is.na(location_type), "Unknown", location_type),
@@ -45,8 +45,8 @@ los_angeles <- crime_core |>
   select(-date_start, -date_end, -uid, -offense_code, -date_single, -census_block)
 
 set.seed(200)
-los_angeles_sample <- los_angeles |>
-  slice_sample(n = 1000) |>
+las <- la |>
+  slice_sample(n = 100000) |>
   mutate(
     time_of_day = case_when(
       hour >= 5  & hour <= 11 ~ "Morning",
@@ -57,7 +57,7 @@ los_angeles_sample <- los_angeles |>
   )
 
 set.seed(123)
-crime_split <- initial_split(los_angeles_sample, prop = 0.8, strata = time_of_day)
+crime_split <- initial_split(las, prop = 0.8, strata = time_of_day)
 crime_train <- training(crime_split)
 crime_test  <- testing(crime_split)
 
@@ -198,7 +198,6 @@ The proportions of offense types differ across cities. While the same offense ca
 
 ```{r}
 #| label: create-los-angeles-data
-#| eval: false
 
 los_angeles <- crime_core |>
   filter(city_name == "Los Angeles")
@@ -228,7 +227,6 @@ The variables data_start and data_end contain substantial missing data for Los A
 
 ```{r}
 #| label: impute-location-missing-display
-#| eval: false
 
 los_angeles <- los_angeles |>
   mutate(
@@ -241,7 +239,6 @@ Missing values in location_category and location_type were replaced with Unknown
 
 ```{r}
 #| label: feature-engineering-display
-#| eval: false
 
 los_angeles <- los_angeles |>
   mutate(
@@ -256,7 +253,6 @@ The date_single variable was separated into year, month, day_of_week and hour. T
 
 ```{r}
 #| label: remove-variables-display
-#| eval: false
 
 los_angeles <- los_angeles |>
   select(-date_start, -date_end, -uid, -offense_code, -date_single, -census_block)
@@ -316,11 +312,10 @@ First, a reproducible random sample of 100,000 crime observations is created fro
 
 ```{r}
 #| label: sample-and-split-display
-#| eval: false
 
 set.seed(200)
 los_angeles_sample <- los_angeles |>
-  slice_sample(n = 1000)
+  slice_sample(n = 100000)
 
 los_angeles_sample <- los_angeles_sample |>
   mutate(
@@ -345,7 +340,6 @@ This recipe prepares the training data for the random forest model by reducing c
 
 ```{r}
 #| label: process-data-display
-#| eval: false
 
 crime_recipe <- recipe(time_of_day ~ ., data = crime_train) |>
   step_rm(city_name, year, hour) |>
@@ -358,7 +352,6 @@ A random forest is an ensemble learning method that builds many decision trees a
 
 ```{r}
 #| label: random-forest-display
-#| eval: false
 
 rf_model <- rand_forest(
   trees = 100,
@@ -378,7 +371,6 @@ The model is configured to build 100 decision trees. The mtry parameter is tuned
 
 ```{r}
 #| label: tune-random-forest-display
-#| eval: false
 
 set.seed(123)
 crime_folds <- vfold_cv(crime_train, v = 5)
@@ -412,7 +404,6 @@ best_rf
 
 ```{r}
 #| label: finalize-random-forest-display
-#| eval: false
 
 best_rf <- select_best(rf_tuned, metric = "roc_auc")
 rf_final <- finalize_workflow(rf_workflow, parameters = best_rf)
@@ -444,19 +435,10 @@ The variable importance plot shows that offence_group, offence_type, and locatio
 
 ```{r}
 #| label: random-forest-predictions-display
-#| eval: false
 
 rf_preds <- predict(rf_fit, crime_test, type = "prob") |>
   bind_cols(predict(rf_fit, crime_test)) |>
   bind_cols(crime_test)
-
-conf_mat(rf_preds,
-         truth = time_of_day,
-         estimate = .pred_class)
-```
-
-```{r}
-#| label: confusion-matrix
 
 conf_mat(rf_preds,
          truth = time_of_day,
