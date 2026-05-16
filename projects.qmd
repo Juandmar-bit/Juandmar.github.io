@@ -1,0 +1,7 @@
+# Projects
+
+## Math 437 Project
+
+[Open Math 437 Project](math437.qmd)
+
+This project uses a random forest model to predict whether Los Angeles crimes occurred in the morning, afternoon, or night.

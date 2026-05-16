@@ -74,5 +74,5 @@ From an early age, computers and technology have always fascinated me — not ju
 
 Feel free to connect with me or explore my work through the links below.
 
--   \[LinkedIn\](your-linkedin-url)
--   \[GitHub\]()
+- \[LinkedIn\](your-linkedin-url)
+- \[GitHub\]()
